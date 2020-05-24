@@ -26,13 +26,13 @@ function multiply(base, multiplier) {
 }
 
 function exponent(base, exponent){
-    let product = 0
+    let product = base
 
     if (exponent == 0){
         return 1
     } else {
-        for (i = 0; i < exponent; i++){
-            product = multiply(base, base)
+        for (i = 0; i < exponent - 1; i++){
+            product = multiply(base, product)
     }}
     return product
 }
