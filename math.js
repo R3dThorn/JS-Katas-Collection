@@ -1,3 +1,4 @@
+/* Variable dump */
 const addButton = document.getElementById("add-button")
 const addTotal = document.getElementById("add-total")
 const multButton = document.getElementById("multiply-button")
@@ -6,6 +7,8 @@ const expButton = document.getElementById("exponent-button")
 const expTotal = document.getElementById("exponent-total")
 const factButton = document.getElementById("factorial-button")
 const factTotal = document.getElementById("factorial-total")
+const fibButton = document.getElementById("fibonacci-button")
+const fibTotal = document.getElementById("fibonacci-total")
 
 /* ALL FUNCTIONS HERE */
 function add(addend1, addend2) {
@@ -23,19 +26,38 @@ function multiply(base, multiplier) {
 }
 
 function exponent(base, exponent){
-    let product = base
+    let product = 0
 
     if (exponent == 0){
         return 1
     } else {
-        for (i = 0; i < exponent - 1; i++){
-            product = multiply(base, product)
+        for (i = 0; i < exponent; i++){
+            product = multiply(base, base)
     }}
     return product
 }
 
-function factorial(base, multiplier) {
+function factorial(base) {
+    let factorize = base
 
+    while (base > 1){
+        base--
+        factorize = multiply(base, factorize)
+    }
+    return factorize
+}
+
+function fibbonaci(places){
+    let sum = [0, 1]
+    let i = 0
+    if (places <= 0){
+        return ("Not allowed")
+    } else {
+        while (i <= places){
+        sum.push(add(sum[i], sum[i + 1]))
+        i++
+    }}
+    return sum[places - 1]
 }
 
 /* ALL BUTTON EVENT LISTENERS HERE */
@@ -56,6 +78,9 @@ expButton.addEventListener("click", function() {
 })
 factButton.addEventListener("click", function() {
     var baseNum = parseInt(document.getElementById("factorial-input").value)
-    var FactVal = baseNum
-    factTotal.innterHTML = factorial(baseNum, FactVal)
+    factTotal.innerHTML = factorial(baseNum)
+})
+fibButton.addEventListener("click", function(){
+    var baseNum = parseInt(document.getElementById("fibonacci-input").value)
+    fibTotal.innerHTML = fibbonaci(baseNum)
 })
