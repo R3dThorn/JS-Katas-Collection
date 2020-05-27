@@ -62,22 +62,22 @@ function fibbonaci(places){
 
 /* ALL BUTTON EVENT LISTENERS HERE */
 addButton.addEventListener("click", function(){
-    var add1 = parseInt(document.getElementById("add-input").value)
-    var add2 = parseInt(document.getElementById("add-input2").value)
+    var add1 = parseFloat(document.getElementById("add-input").value)
+    var add2 = parseFloat(document.getElementById("add-input2").value)
     addTotal.innerHTML = add(add1, add2)
 })
 multButton.addEventListener("click", function(){
-    var mult = parseInt(document.getElementById("mult-input").value)
-    var times = parseInt(document.getElementById("mult-input2").value)
+    var mult = parseFloat(document.getElementById("mult-input").value)
+    var times = parseFloat(document.getElementById("mult-input2").value)
     multTotal.innerHTML = multiply(mult, times)
 })
 expButton.addEventListener("click", function() {
-    var baseNum = parseInt(document.getElementById("exponent-input").value)
-    var expNum = parseInt(document.getElementById("exponent-input2").value)
+    var baseNum = parseFloat(document.getElementById("exponent-input").value)
+    var expNum = parseFloat(document.getElementById("exponent-input2").value)
     expTotal.innerHTML = exponent(baseNum, expNum)
 })
 factButton.addEventListener("click", function() {
-    var baseNum = parseInt(document.getElementById("factorial-input").value)
+    var baseNum = parseFloat(document.getElementById("factorial-input").value)
     factTotal.innerHTML = factorial(baseNum)
 })
 fibButton.addEventListener("click", function(){
