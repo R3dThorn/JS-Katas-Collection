@@ -20,7 +20,7 @@ function multiply(base, multiplier) {
     let product = 0
 
     for (let i = 0; i < multiplier; i++) {
-        product += add(base, 0)
+        product = add(base, product)
     }
     return product
 }
